@@ -1,5 +1,9 @@
 # chespirito
 
+![rubygems](https://badgen.net/rubygems/n/chespirito)
+![rubygems](https://badgen.net/rubygems/v/chespirito/latest)
+![rubygems](https://badgen.net/rubygems/dt/chespirito)
+
 ![Build](https://github.com/leandronsp/chespirito/actions/workflows/build.yml/badge.svg)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
@@ -12,7 +16,7 @@
  \______||__|  |__| |_______|_______/    | _|      |__| | _| `._____||__|     |__|      \______/
 ```
 
-[chespirito](https://github.com/leandronsp/chespirito) is a dead simple, yet Rack-compatible, web framework written in Ruby.
+[chespirito](https://rubygems.org/gems/chespirito) is a dead simple, yet Rack-compatible, web framework written in Ruby.
 
 ## Requirements
 
@@ -38,6 +42,8 @@ Usage: make <target>
   ci                         Runs code linter and unit tests in CI
   sample.hello-app           Runs a sample Hello World app
   sample.login-app           Runs a sample app with Login feature
+  gem.publish                Publishes the gem to https://rubygems.org (auth required)
+  gem.yank                   Removes a specific version from the Rubygems
 ```
 
 ----

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+VERSION=$1
+
+gem signin
+gem build chespirito.gemspec
+gem install chespirito-$VERSION.gem
+gem push chespirito-$VERSION.gem

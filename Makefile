@@ -36,3 +36,16 @@ sample.login-app: ## Runs a sample app with Login feature
 		--rm \
 		ruby \
 		bash -c "./sample/login_app/run"
+
+##### Gem #####
+gem.publish: ## Publishes the gem to https://rubygems.org (auth required)
+	@docker-compose run \
+		--rm \
+		ruby \
+		bash -c "bin/gem-publish ${version}"
+
+gem.yank: ## Removes a specific version from the Rubygems
+	@docker-compose run \
+		--rm \
+		ruby \
+		bash -c "bin/gem-yank ${version}"
