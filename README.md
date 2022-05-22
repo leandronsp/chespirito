@@ -51,7 +51,7 @@ Usage: make <target>
   gem.yank                   Removes a specific version from the Rubygems
 ```
 
-## Boostraping an application using Chespirito and Adelnor
+## Boostrapping an application using Chespirito and Adelnor
 
 1. Install the gems:
 ```bash
