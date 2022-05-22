@@ -22,6 +22,11 @@
 
 Ruby
 
+## Installation
+```bash
+$ gem install chespirito
+```
+
 ## Development tooling
 
 Make and Docker
