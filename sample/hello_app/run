@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require 'adelnor'
+require './lib/chespirito'
+
+class HomeController < Chespirito::Controller
+  def index
+    response.status = 200
+    response.headers['Content-Type'] = 'text/html'
+    response.body = 'Hello World'
+  end
+end
+
+sample_app =
+  Chespirito::App.configure do |app|
+    app.register_route('GET', '/', [HomeController, :index])
+  end
+
+Adelnor::Server.run sample_app, 3000

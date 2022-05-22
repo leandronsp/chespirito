@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'adelnor'
+require './lib/chespirito'
+
+require_relative './controllers/home_controller'
+require_relative './controllers/sessions_controller'
+
+sample_app =
+  Chespirito::App.configure do |app|
+    app.register_route('GET', '/',        [HomeController, :index])
+    app.register_route('POST', '/login',  [SessionsController, :create])
+    app.register_route('POST', '/logout', [SessionsController, :destroy])
+  end
+
+Adelnor::Server.run sample_app, 3000
