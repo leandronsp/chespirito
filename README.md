@@ -51,6 +51,52 @@ Usage: make <target>
   gem.yank                   Removes a specific version from the Rubygems
 ```
 
+## Boostraping an application using Chespirito and Adelnor
+
+1. Install the gems:
+```bash
+$ gem install chespirito adelnor
+```
+
+2. Register the Chespirito app and routes:
+
+```ruby
+class MyApp
+  def self.application
+    Chespirito::App.configure do |app|
+      app.register_route('GET',  '/', [HelloController, :index])
+      app.register_route('POST', '/', [HelloController, :create])
+    end
+  end
+end
+```
+
+3. Create the Controller and action:
+
+```ruby
+class HelloController < Chespirito::Controller
+  def index
+    response.status = 200
+
+    response.headers['Content-Type'] = 'text/html'
+
+    response.body = '<h1>Hello, world!</h1>'
+  end
+
+  def create
+    response.status = 204
+  end
+end
+```
+
+4. Run the app using Adelnor (or you can choose other web server like Puma, Unicorn, etc):
+
+```ruby
+Adelnor::Server.run MyApp.application, 3000
+```
+
+5. Open `localhost:3000` and cheers!
+
 ----
 
 [ASCII art generator](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
