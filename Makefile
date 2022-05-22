@@ -22,3 +22,6 @@ ci: ## Runs code linter and unit tests in CI
 	bundle install
 	rubocop
 	ruby -Itest test/all.rb
+
+sample.app: ## Runs a sample app
+	@docker-compose run --rm ruby bash -c "./sample-app/run"
