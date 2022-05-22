@@ -4,12 +4,12 @@
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
 ```
-  ______  __    __   _______     _______..______    __  .______       __  .___________.  ______   
- /      ||  |  |  | |   ____|   /       ||   _  \  |  | |   _  \     |  | |           | /  __  \  
-|  ,----'|  |__|  | |  |__     |   (----`|  |_)  | |  | |  |_)  |    |  | `---|  |----`|  |  |  | 
-|  |     |   __   | |   __|     \   \    |   ___/  |  | |      /     |  |     |  |     |  |  |  | 
-|  `----.|  |  |  | |  |____.----)   |   |  |      |  | |  |\  \----.|  |     |  |     |  `--'  | 
- \______||__|  |__| |_______|_______/    | _|      |__| | _| `._____||__|     |__|      \______/                                                                                                 
+  ______  __    __   _______     _______..______    __  .______       __  .___________.  ______
+ /      ||  |  |  | |   ____|   /       ||   _  \  |  | |   _  \     |  | |           | /  __  \
+|  ,----'|  |__|  | |  |__     |   (----`|  |_)  | |  | |  |_)  |    |  | `---|  |----`|  |  |  |
+|  |     |   __   | |   __|     \   \    |   ___/  |  | |      /     |  |     |  |     |  |  |  |
+|  `----.|  |  |  | |  |____.----)   |   |  |      |  | |  |\  \----.|  |     |  |     |  `--'  |
+ \______||__|  |__| |_______|_______/    | _|      |__| | _| `._____||__|     |__|      \______/
 ```
 
 [chespirito](https://github.com/leandronsp/chespirito) is a dead simple, yet Rack-compatible, web framework written in Ruby.
@@ -36,6 +36,8 @@ Usage: make <target>
   run.tests                  Runs Unit tests
   rubocop                    Runs code linter
   ci                         Runs code linter and unit tests in CI
+  sample.hello-app           Runs a sample Hello World app
+  sample.login-app           Runs a sample app with Login feature
 ```
 
 ----
