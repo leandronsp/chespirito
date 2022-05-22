@@ -1,10 +1,10 @@
-# boilerplow
+# chespirito
 
-![Build](https://github.com/leandronsp/boilerplow/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/leandronsp/chespirito/actions/workflows/build.yml/badge.svg)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
 
-A template project for bootstrapping Ruby apps.
+chespirito is a dead simple, yet Rack-compatible, web framework written in Ruby.
 
 ## Requirements
 
@@ -26,6 +26,10 @@ Usage: make <target>
   bundle.install             Installs the Ruby gems
   bash                       Creates a container Bash
   run.tests                  Runs Unit tests
-  rubocop                    Runs code linter with auto-correction
+  rubocop                    Runs code linter
   ci                         Runs code linter and unit tests in CI
 ```
+
+----
+
+[ASCII art generator](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
