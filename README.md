@@ -3,8 +3,16 @@
 ![Build](https://github.com/leandronsp/chespirito/actions/workflows/build.yml/badge.svg)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
+```
+  ______  __    __   _______     _______..______    __  .______       __  .___________.  ______   
+ /      ||  |  |  | |   ____|   /       ||   _  \  |  | |   _  \     |  | |           | /  __  \  
+|  ,----'|  |__|  | |  |__     |   (----`|  |_)  | |  | |  |_)  |    |  | `---|  |----`|  |  |  | 
+|  |     |   __   | |   __|     \   \    |   ___/  |  | |      /     |  |     |  |     |  |  |  | 
+|  `----.|  |  |  | |  |____.----)   |   |  |      |  | |  |\  \----.|  |     |  |     |  `--'  | 
+ \______||__|  |__| |_______|_______/    | _|      |__| | _| `._____||__|     |__|      \______/                                                                                                 
+```
 
-chespirito is a dead simple, yet Rack-compatible, web framework written in Ruby.
+[chespirito](https://github.com/leandronsp/chespirito) is a dead simple, yet Rack-compatible, web framework written in Ruby.
 
 ## Requirements
 
