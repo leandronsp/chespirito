@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './lib/chespirito/response'
+require_relative './response'
 
 module Chespirito
   class Controller

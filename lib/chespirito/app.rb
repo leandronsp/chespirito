@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './lib/chespirito/request'
+require_relative './request'
 
 module Chespirito
   class App
