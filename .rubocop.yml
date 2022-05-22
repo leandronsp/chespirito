@@ -1,0 +1,6 @@
+AllCops:
+  TargetRubyVersion: 3.0
+
+Style/Documentation:
+  Exclude:
+    - '**/*.rb'
