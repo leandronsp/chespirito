@@ -24,4 +24,8 @@ ci: ## Runs code linter and unit tests in CI
 	ruby -Itest test/all.rb
 
 sample.app: ## Runs a sample app
-	@docker-compose run --rm ruby bash -c "./sample-app/run"
+	@docker-compose run \
+		--service-ports \
+		--rm \
+		ruby \
+		bash -c "./sample-app/run"

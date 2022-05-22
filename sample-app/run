@@ -1,3 +1,9 @@
 #!/usr/bin/env ruby
 
-puts 'hello'
+require 'adelnor'
+
+app = -> (env) do
+  [200, { 'Content-Type' => 'text/html' }, ['Hello']]
+end
+
+Adelnor::Server.run app, 3000
