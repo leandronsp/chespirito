@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 require_relative './request'
+require_relative './router'
 
 module Chespirito
   class App
     def initialize
-      @routes = {}
+      @router = ::Chespirito::Router.new
     end
 
     def self.configure
@@ -14,19 +15,13 @@ module Chespirito
       new.tap { |app| yield(app) }
     end
 
-    def register_route(verb, path, trait)
-      @routes[route_key(verb, path)] = trait
+    def register_route(*attrs)
+      attrs => [verb, path, trait]
+
+      @router.register_route(verb, path, trait)
     end
 
-    def lookup(request)
-      controller_klass, action = @routes[route_key(request.verb, request.path)]
-
-      return unless controller_klass
-
-      controller_klass.dispatch(action, request)
-    end
-
-    def route_key(verb, path) = "#{verb} #{path}"
+    def lookup(request) = @router.lookup(request)
 
     def call(env)
     request  = ::Chespirito::Request.build(env)
