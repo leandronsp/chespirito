@@ -30,24 +30,4 @@ module Chespirito
     def route_parts(route) = RouteUtils.parts(route.path)
     def request_parts      = RouteUtils.words(@request.path)
   end
-
-  class Route
-    attr_reader :verb, :path, :controller_klass, :action
-
-    def initialize(*attrs)
-      @verb, @path, @trait = attrs
-      @controller_klass, @action = @trait
-    end
-
-    def key = "#{@verb} #{@path}"
-  end
-
-  class SystemRoute
-    attr_reader :key, :controller_klass, :action
-
-    def initialize(*attrs)
-      @key, @trait = attrs
-      @controller_klass, @action = @trait
-    end
-  end
 end

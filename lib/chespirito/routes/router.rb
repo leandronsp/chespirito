@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require_relative './route'
-require_relative './request'
-require_relative './response'
+require_relative './route_constraint_checker'
+require_relative '../response'
 
 module Chespirito
   class Router

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative './request'
-require_relative './router'
+require_relative './routes/router'
 
 module Chespirito
   class App
