@@ -11,7 +11,7 @@ module Chespirito
       @response = ::Chespirito::Response.new
     end
 
-    def self.dispatch(action, request)
+    def self.process(action, request)
       new(request)
         .tap  { |controller| controller.send(action.to_sym) }
         .then { |controller| controller.response }

@@ -30,5 +30,11 @@ module Chespirito
         cookies: rack_request.cookies
       )
     end
+
+    def add_param!(name, value)
+      @params ||= {}
+
+      @params[name] = value
+    end
   end
 end

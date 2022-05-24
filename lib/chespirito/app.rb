@@ -15,17 +15,19 @@ module Chespirito
       new.tap { |app| yield(app) }
     end
 
-    def register_route(*attrs)
-      attrs => [verb, path, trait]
-
+    def register_route(verb, path, trait)
       @router.register_route(verb, path, trait)
     end
 
-    def lookup(request) = @router.lookup(request)
+    def register_system_route(key, trait)
+      @router.register_system_route(key, trait)
+    end
+
+    def dispatch(request) = @router.dispatch(request)
 
     def call(env)
     request  = ::Chespirito::Request.build(env)
-    response = lookup(request)
+    response = dispatch(request)
 
     [
       response.status,

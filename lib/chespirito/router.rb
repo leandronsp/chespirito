@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative './route'
 require_relative './request'
 require_relative './response'
 
@@ -9,19 +10,49 @@ module Chespirito
       @routes = {}
     end
 
-    def register_route(verb, path, trait)
-      @routes[route_key(verb, path)] = trait
+    def register_route(*attrs)
+      route = Route.new(*attrs)
+
+      @routes[route.key] = route
     end
 
-    def lookup(request)
-      controller_klass, action = @routes[route_key(request.verb, request.path)]
+    def register_system_route(*attrs)
+      route = SystemRoute.new(*attrs)
 
-      return not_found_response unless controller_klass
-
-      controller_klass.dispatch(action, request)
+      @routes[route.key] = route
     end
 
-    def route_key(verb, path) = "#{verb} #{path}"
+    def dispatch(request)
+      route = route_for(request)
+      return not_found_response unless route
+
+      route
+        .controller_klass
+        .process(route.action, request)
+    end
+
+    def route_for(request)
+      simple_route(request) || constraint_route(request) || not_found_route
+    end
+
+    def simple_route(request)
+      @routes["#{request.verb} #{request.path}"]
+    end
+
+    def constraint_route(request)
+      constraint_checker = RouteConstraintChecker.new(request)
+
+      route = @routes.values.find(&constraint_checker.method(:match_route?))
+      return unless route
+
+      route.tap do
+        constraint_checker
+          .extract_params(route)
+          .each { |(name, value)| request.add_param!(name, value) }
+      end
+    end
+
+    def not_found_route = @routes['404'] || @routes[:not_found]
 
     def not_found_response
       ::Chespirito::Response.new.tap do |response|
