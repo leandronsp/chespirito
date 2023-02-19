@@ -55,6 +55,7 @@ Usage: make <target>
 ## Boostrapping an application using Chespirito and Adelnor
 
 1. Install the gems:
+
 ```bash
 $ gem install chespirito adelnor
 ```
