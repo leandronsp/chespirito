@@ -91,7 +91,7 @@ class HelloController < Chespirito::Controller
 end
 ```
 
-4. Run the app using Adelnor (or you can choose other web server like Puma, Unicorn, etc):
+4. Run the app using Adelnor (or you can choose another web server like Puma, Unicorn, etc):
 
 ```ruby
 Adelnor::Server.run MyApp.application, 3000
