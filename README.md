@@ -8,12 +8,13 @@
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
 ```
-  ______  __    __   _______     _______..______    __  .______       __  .___________.  ______
- /      ||  |  |  | |   ____|   /       ||   _  \  |  | |   _  \     |  | |           | /  __  \
-|  ,----'|  |__|  | |  |__     |   (----`|  |_)  | |  | |  |_)  |    |  | `---|  |----`|  |  |  |
-|  |     |   __   | |   __|     \   \    |   ___/  |  | |      /     |  |     |  |     |  |  |  |
-|  `----.|  |  |  | |  |____.----)   |   |  |      |  | |  |\  \----.|  |     |  |     |  `--'  |
- \______||__|  |__| |_______|_______/    | _|      |__| | _| `._____||__|     |__|      \______/
+       ( )                         _        _ ( )_
+   ___ | |__     __    ___  _ _   (_) _ __ (_)| ,_)   _
+ /'___)|  _ `\ /'__`\/',__)( '_`\ | |( '__)| || |   /'_`\
+( (___ | | | |(  ___/\__, \| (_) )| || |   | || |_ ( (_) )
+`\____)(_) (_)`\____)(____/| ,__/'(_)(_)   (_)`\__)`\___/'
+                           | |
+                           (_)
 ```
 
 [chespirito](https://rubygems.org/gems/chespirito) is a dead simple, yet Rack-compatible, web framework written in Ruby.
@@ -99,4 +100,4 @@ Adelnor::Server.run MyApp.application, 3000
 
 ----
 
-[ASCII art generator](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+[ASCII art generator](http://www.network-science.de/ascii/)
