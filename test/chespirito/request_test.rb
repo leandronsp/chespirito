@@ -1,3 +1,5 @@
+require 'stringio'
+
 module Chespirito
   class RequestTest < Test::Unit::TestCase
     def test_request_build
@@ -42,6 +44,26 @@ module Chespirito
       assert_equal '/users/:id', request.path
 
       assert request.params == {}
+    end
+
+    def test_request_restful_post
+      env = {
+        'REQUEST_METHOD' => 'POST',
+        'PATH_INFO' => '/login',
+        'QUERY_STRING' => '',
+        'SERVER_PORT' => 3000,
+        'SERVER_NAME' => 'localhost:3000',
+        'CONTENT_LENGTH' => 412,
+        'HTTP_COOKIE' => '',
+        'rack.input' => StringIO.new('email=user%40example.com&password=pa%24%24w0rd')
+      }.merge({ 'Content-Type' => 'application/x-www-form-urlencoded' })
+
+      request = ::Chespirito::Request.build(env)
+
+      assert_equal 'POST',   request.verb
+      assert_equal '/login', request.path
+
+      assert_equal request.params, { 'email' => 'user@example.com', 'password' => 'pa$$w0rd' }
     end
   end
 end
