@@ -26,14 +26,14 @@ module Chespirito
     def dispatch(request) = @router.dispatch(request)
 
     def call(env)
-    request  = ::Chespirito::Request.build(env)
-    response = dispatch(request)
+      request  = ::Chespirito::Request.build(env)
+      response = dispatch(request)
 
-    [
-      response.status,
-      response.headers,
-      [response.body]
-    ]
+      [
+        response.status,
+        response.headers,
+        [response.body]
+      ]
     end
   end
 
