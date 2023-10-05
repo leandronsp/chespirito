@@ -65,5 +65,25 @@ module Chespirito
 
       assert_equal request.params, { 'email' => 'user@example.com', 'password' => 'pa$$w0rd' }
     end
+
+    def test_request_restful_post_json
+      env = {
+        'REQUEST_METHOD' => 'POST',
+        'PATH_INFO' => '/login',
+        'QUERY_STRING' => '',
+        'SERVER_PORT' => 3000,
+        'SERVER_NAME' => 'localhost:3000',
+        'CONTENT_LENGTH' => 412,
+        'HTTP_COOKIE' => '',
+        'rack.input' => StringIO.new('{"username":"leandro"}')
+      }.merge({ 'content-type' => 'application/json' })
+
+      request = ::Chespirito::Request.build(env)
+
+      assert_equal 'POST',   request.verb
+      assert_equal '/login', request.path
+
+      assert_equal request.params, { 'username' => 'leandro' }
+    end
   end
 end

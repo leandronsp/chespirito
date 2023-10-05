@@ -21,7 +21,7 @@ module Chespirito
       rack_request = Rack::Request.new(env)
 
       body_params = rack_request.post? ? parse_body_params(rack_request.body.read, 
-                                                           rack_request.env['Content-Type']) : {}
+                                                           rack_request.env) : {}
 
       params = rack_request.params.merge(body_params)
 
@@ -34,7 +34,9 @@ module Chespirito
       )
     end
 
-    def self.parse_body_params(body_data, content_type)
+    def self.parse_body_params(body_data, request_env)
+      content_type = request_env['Content-Type'] || request_env['content-type']
+
       case content_type
       in 'application/json'; JSON.parse(body_data)
       in 'application/x-www-form-urlencoded'
