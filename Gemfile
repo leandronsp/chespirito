@@ -2,6 +2,6 @@
 
 source 'https://rubygems.org'
 
-gem 'rack'
-gem 'adelnor'
+gem 'rack', '~> 2.2.3'
+gem 'adelnor', '~> 0.0.6'
 gem 'byebug'
