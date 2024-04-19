@@ -76,7 +76,7 @@ module Chespirito
         'CONTENT_LENGTH' => 412,
         'HTTP_COOKIE' => '',
         'rack.input' => StringIO.new('{"username":"leandro"}')
-      }.merge({ 'content-type' => 'application/json' })
+      }.merge({ 'CONTENT_TYPE' => 'application/json' })
 
       request = ::Chespirito::Request.build(env)
 

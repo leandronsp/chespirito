@@ -1,4 +1,4 @@
-FROM ruby
+FROM ruby:3.1.2
 WORKDIR /app
 ADD Gemfile .
 ADD Gemfile.lock .
