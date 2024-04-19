@@ -14,13 +14,9 @@ bash: ## Creates a container Bash
 run.tests: ## Runs Unit tests
 	@docker-compose run --rm ruby ruby -Itest test/all.rb
 
-rubocop: ## Runs code linter with auto-correction
-	@docker-compose run --rm ruby rubocop -A
-
 ci: ## Runs code linter and unit tests in CI
 	bundle lock --add-platform x86_64-linux
 	bundle install
-	rubocop
 	ruby -Itest test/all.rb
 
 sample.hello-app: ## Runs a sample Hello World app

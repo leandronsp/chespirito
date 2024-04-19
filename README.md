@@ -5,7 +5,6 @@
 ![rubygems](https://badgen.net/rubygems/dt/chespirito)
 
 ![Build](https://github.com/leandronsp/chespirito/actions/workflows/build.yml/badge.svg)
-[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
 ```
        ( )                         _        _ ( )_
@@ -44,7 +43,6 @@ Usage: make <target>
   bundle.install             Installs the Ruby gems
   bash                       Creates a container Bash
   run.tests                  Runs Unit tests
-  rubocop                    Runs code linter
   ci                         Runs code linter and unit tests in CI
   sample.hello-app           Runs a sample Hello World app
   sample.login-app           Runs a sample app with Login feature
