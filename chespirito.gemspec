@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name        = 'chespirito'
-  spec.version     = '0.0.6'
+  spec.version     = '0.0.7'
   spec.summary     = 'Chespirito Ruby web framework'
   spec.description = 'A dead simple, yet Rack-compatible, web framework written in Ruby'
   spec.authors     = ['Leandro Proença']
